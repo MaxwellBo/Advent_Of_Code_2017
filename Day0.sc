@@ -6,3 +6,7 @@ def getDayInput(number: Int) = {
   try source.mkString.trim finally source.close()
 }
 
+def getDayInputByLine(number: Int) = {
+  val source = scala.io.Source.fromFile(s"inputs/Day_${number}.txt").getLines
+}
+

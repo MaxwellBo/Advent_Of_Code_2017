@@ -6,8 +6,6 @@ def zipWithOffset(offset: Int) =
   captcha.zip(captcha.drop(offset) ++ captcha.take(offset))
     .filter { case (x, y) => x == y }.map(_._1).sum
 
-val partOne = zipWithOffset(1)
-println(s"Part 1: $partOne") // 1150
+println(s"Part 1: ${zipWithOffset(1)}") // 1150
 
-val partTwo = zipWithOffset(captcha.length / 2)
-println(s"Part 2: $partTwo") // 1064
+println(s"Part 2: ${zipWithOffset(captcha.length / 2)}") // 1064

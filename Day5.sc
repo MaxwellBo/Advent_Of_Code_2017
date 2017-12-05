@@ -10,10 +10,9 @@ def part(n: Int): Int = {
     instructions(pointer) += (if (n == 1) 1 else if (hold >= 3) -1 else 1)
     pointer += hold
     count += 1
-  }
-
+  } 
   count
 }
 
 println(s"Part 1: ${part(1)}") // 354121
-println(s"Part 2: ${part(2)}")
+println(s"Part 2: ${part(2)}") // 27283023

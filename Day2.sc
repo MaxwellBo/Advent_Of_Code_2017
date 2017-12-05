@@ -10,4 +10,3 @@ def evenlyDivides(row: Array[Int]): Int =
 
 val partTwo = grid.map(evenlyDivides).sum
 println(s"Part 2: $partTwo") // 191
-

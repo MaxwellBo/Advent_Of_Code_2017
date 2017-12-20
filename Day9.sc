@@ -27,5 +27,5 @@ def count(thing: Thing): Int = thing match {
 }
 
 val Parsed.Success(thing, _) = group.parse(Day0.getDayInput(9))
-println(s"Part 1: ${score(1)(thing)}")
-println(s"Part 2: ${count(thing)}")
+println(s"Part 1: ${score(1)(thing)}") // 14204
+println(s"Part 2: ${count(thing)}") // 6622

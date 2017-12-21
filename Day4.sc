@@ -11,7 +11,7 @@ def allDistinctAndUnique(words: Array[String]) = {
 }
 
 val partOne = wordArray.filter(allDistinct).length
-println(s"Part 1: $partOne") // 451
+println(s"Day 4-1: $partOne") // 451
 
 val partTwo = wordArray.filter(allDistinctAndUnique).length
-println(s"Part 1: $partTwo") // 451
+println(s"Day 4-2: $partTwo") // 451

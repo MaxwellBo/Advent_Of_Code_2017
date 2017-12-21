@@ -17,6 +17,6 @@ while True:
 
     history.append(tuple(blocks))
 
-print(f"Part 1: {len(history) + 1}") # 11137
-print(f"Part 2: {len(history) - history.index(tuple(blocks))}") # 1037
+print(f"Day 6-1: {len(history) + 1}") # 11137
+print(f"Day 6-2: {len(history) - history.index(tuple(blocks))}") # 1037
 

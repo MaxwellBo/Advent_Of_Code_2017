@@ -7,5 +7,4 @@ def zipWithOffset(offset: Int) =
     .filter { case (x, y) => x == y }.map(_._1).sum
 
 println(s"Day 1-1: ${zipWithOffset(1)}") // 1150
-
 println(s"Day 1-2: ${zipWithOffset(captcha.length / 2)}") // 1064

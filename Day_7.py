@@ -20,7 +20,6 @@ root = list(nx.topological_sort(G))[0]
 
 print(f"Day 7-1: {root}")
 
-
 print(G.successors(root))
 
 def find_first_balanced(root: str):

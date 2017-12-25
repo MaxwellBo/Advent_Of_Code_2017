@@ -12,34 +12,34 @@ def load_grid():
 
     return grid 
 
-facing, pos, infected, grid = 1j, (0 + 0j), 0, load_grid()
+facing, pos, infected, grid = N, ORIGIN, 0, load_grid()
 
 for i in range(10000):
     if grid[pos] == CLEAN:
-        facing *= 1j # turn left
+        facing = turn_left(facing)
         grid[pos] = INFECTED; infected += 1
     elif grid[pos] == INFECTED:
-        facing *= -1j # turn right
+        facing = turn_right(facing)
         grid[pos] = CLEAN
 
     pos += facing
 
 print(f'Day 22-1: {infected}') # 5399
 
-facing, pos, infected, grid = 1j, (0 + 0j), 0, load_grid()
+facing, pos, infected, grid = N, ORIGIN, 0, load_grid()
 
 for i in range(10000000):
     if grid[pos] == CLEAN:
-        facing *= 1j # turn left
+        facing = turn_left(facing) 
         grid[pos] = WEAKENED
     elif grid[pos] == WEAKENED:
         # continue straight
         grid[pos] = INFECTED; infected += 1
     elif grid[pos] == INFECTED:
-        facing *= -1j # turn right
+        facing = turn_right(facing)
         grid[pos] = FLAGGED
     elif grid[pos] == FLAGGED:
-        facing *= -1 # about face
+        facing = turn_around(facing)
         grid[pos] = CLEAN
 
     pos += facing

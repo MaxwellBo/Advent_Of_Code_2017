@@ -2,7 +2,7 @@ A_START, B_START = 699, 124
 A_FACTOR, B_FACTOR = 16807, 48271
 A_MULTIPLE, B_MULTIPLE = 4, 8 
 DIVISOR = 2147483647
-count = 0
+from Day_0 import *
 
 def gen(nxt, factor, multiple=None):
     while True:
@@ -14,14 +14,5 @@ def gen(nxt, factor, multiple=None):
 a, am = gen(A_START, A_FACTOR), gen(A_START, A_FACTOR, A_MULTIPLE)
 b, bm = gen(B_START, B_FACTOR), gen(B_START, B_FACTOR, B_MULTIPLE)
 
-for _ in range(40000000):
-    if next(a) & 65535 == next(b) & 65535: count += 1
-
-print("Part 15-1: {count}".format(count=count)) # 600
-
-count = 0 
-
-for _ in range(5000000):
-    if next(am) & 65535 == next(bm) & 65535: count += 1
-
-print("Part 15-2: {count}".format(count=count)) # 313
+print(f"Part 15-1: {quantify(lambda _: next(a) & 65535 == next(b) & 65535, range(40000000))}") # 600
+print(f"Part 15-2: {quantify(lambda _: next(am) & 65535 == next(bm) & 65535, range(5000000))}") # 313

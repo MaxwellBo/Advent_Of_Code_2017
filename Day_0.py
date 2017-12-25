@@ -21,6 +21,9 @@ def get_day_input(number):
     file.close()
     return text
 
+def get_day_input_split(number):
+    return get_day_input(number).split('\n')
+
 ################ Functions on Iterables
 
 def head(iterable, default=None): 
@@ -87,8 +90,8 @@ NEIGHBOURS_4 = SIDES = N, S, E, W = 1j, -1j, 1, -1
 DIAGONALS = NE, SE, SW, NW = (N + E), (S + E), (S + W), (N + W)
 NEIGHBOURS_8 = (*NEIGHBOURS_4, *DIAGONALS)
 
-def get_neighbours_4(c): return [ c + i for i in NEIGHBOURS_4]
-def get_neighbours_8(c): return [ c + i for i in NEIGHBOURS_8]
+def get_neighbours_4(c): return [ c + i for i in NEIGHBOURS_4 ]
+def get_neighbours_8(c): return [ c + i for i in NEIGHBOURS_8 ]
 
 def turn_left(c): return c * 1j
 def turn_right(c): return c * -1j

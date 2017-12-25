@@ -5,23 +5,20 @@ import fastparse.all._
 sealed trait Thing
 case class Group(contents: Seq[Thing]) extends Thing
 case class Garbage(contents: String) extends Thing
-case class Malformed() extends Thing
 
 val things: P[Thing] = P( group | garbage | malformed )
 val garbage: P[Thing] = P( "<" ~ P( negate | chomp ).rep ~ ">").map(x => Garbage(x.mkString("")))
 val negate: P[String] = P( "!" ~ AnyChar ).map(_ => "")
 val chomp: P[String] = P( CharsWhile(x => x != '>' && x != '!').! )
 val group: P[Thing] = P( "{" ~ things.rep(sep=",") ~ "}").map(Group(_))
-val malformed: P[Thing] = P( Pass ).map(_ => Malformed())
+val malformed: P[Thing] = P( Pass ).map(_ => Garbage(""))
 
 def score(level: Int)(thing: Thing): Int = thing match {
-  case Malformed() => 0
   case Garbage(_) => 0
   case Group(contents) => level + contents.map(score(level + 1)).sum
 }
 
 def count(thing: Thing): Int = thing match {
-  case Malformed() => 0
   case Garbage(contents) => contents.length
   case Group(contents) => contents.map(count).sum
 }

@@ -4,9 +4,7 @@ A_MULTIPLE, B_MULTIPLE = 4, 8
 DIVISOR = 2147483647
 count = 0
 
-def gen(start, factor, multiple=None):
-    nxt = start
-
+def gen(nxt, factor, multiple=None):
     while True:
         if not multiple or nxt % multiple == 0:
             yield nxt

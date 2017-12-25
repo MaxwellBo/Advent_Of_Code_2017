@@ -19,4 +19,3 @@ while True:
 
 print(f"Day 6-1: {len(history) + 1}") # 11137
 print(f"Day 6-2: {len(history) - history.index(tuple(blocks))}") # 1037
-

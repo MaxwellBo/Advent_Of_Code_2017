@@ -20,7 +20,7 @@ enhancements = { parse(i.split()[0]).tostring() : parse(i.split()[2])\
 
 arr = parse(".#./..#/###")
 
-for i in range(1, 19):
+for i in range(1, 18 + 1):
     axis = arr.shape[0]
 
     divided = [ np.hsplit(i, axis / 2) for i in np.vsplit(arr, axis / 2) ]\

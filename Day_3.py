@@ -2,8 +2,6 @@ from Day_0 import *
 from collections import defaultdict
 
 INPUT = 347991
-N, S, E, W = 1j, -1j, 1, -1
-NE, SE, SW, NW = (N + E), (S + E), (S + W), (N + W)
 
 def distance(point): return abs(point.real) + abs(point.imag)
 

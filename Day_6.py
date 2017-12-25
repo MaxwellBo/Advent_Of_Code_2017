@@ -9,7 +9,7 @@ while True:
     max_val, blocks[max_index] = blocks[max_index], 0
 
     while max_val > 0:
-        pointer = 0 if (pointer + 1) == len(blocks) else pointer + 1
+        pointer = (pointer + 1) % len(blocks)
         max_val -= 1
         blocks[pointer] += 1
 

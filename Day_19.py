@@ -1,23 +1,22 @@
 from Day_0 import *
 
-diagram = get_day_input_split(19)
+diagram = get_day_input(19).split('\n')
 
 pos, facing, seen, steps = diagram[0].find('|') + len(diagram) * 1j, S, [], 0
 
 def _read(c):
     try: return diagram[len(diagram) - int(c.imag)][int(c.real)]
-    except Exception as e: return ' '
-
-def paths(): return [ i for i in NEIGHBOURS_4 if _read(i + pos) != ' ' if i != turn_around(facing) ]
+    except IndexError as _:
+        return ' '
 
 while True:
     char = _read(pos)
-    if char == ' ': break
 
-    if char.isalpha():
-        seen.append(char)
-    elif char == '+':
-        facing = paths()[0] # should be the only path offered
+    if   char == ' '    : break
+    elif char.isalpha() : seen.append(char)
+    elif char == '+'    :
+        facing = next( i for i in NEIGHBOURS_4 
+                       if _read(i + pos) != ' ' if i != turn_around(facing) )
 
     pos += facing; steps += 1
 

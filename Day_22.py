@@ -20,7 +20,7 @@ def part_1():
         if grid[pos] == CLEAN:
             facing -= 1 # turn left
             grid[pos] = INFECTED; infected += 1
-        else:
+        elif grid[pos] == INFECTED:
             facing += 1 # turn right
             grid[pos] = CLEAN
 

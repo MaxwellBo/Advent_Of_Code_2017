@@ -18,8 +18,7 @@ for i in programs:
 
 root = list(nx.topological_sort(G))[0]
 
-print(f"Part 1: {root}")
-
+print(f"Day 7-1: {root}")
 
 print(G.successors(root))
 

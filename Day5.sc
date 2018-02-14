@@ -14,5 +14,5 @@ def part(n: Int): Int = {
   count
 }
 
-println(s"Part 1: ${part(1)}") // 354121
-println(s"Part 2: ${part(2)}") // 27283023
+println(s"Day 5-1: ${part(1)}") // 354121
+println(s"Day 5-2: ${part(2)}") // 27283023
